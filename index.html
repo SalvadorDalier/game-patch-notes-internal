@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>game platch notes internal</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.cs"
+    />
+  </head>
+  <body>
+    <!-- game update announce -->
+    <h1>Bảng Cập Nhật Sự Kiện Tết 2026 - Server VNG</h1>
+    <p>trong phiên bảng lần này game sẽ tăng update vài chức năng như sau</p>
+    <ul>
+      <li>Update thêm chức năng trading vật phẩm</li>
+      <li>chỉnh sửa lại sức mạnh tướng, trang bị</li>
+      <li>
+        fix bug
+        <ul tyle="1">
+          <li>lỗi miễn sát thương ở tướng</li>
+        </ul>
+      </li>
+    </ul>
+    <!-- bảng tỷ lệ rớt vật phẩm -->
+    <table>
+      <caption>
+        bảng sửa lại tỷ lệ rớt vật phẩm
+      </caption>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Rank</th>
+        <th>Probably</th>
+        <th>Description</th>
+      </thead>
+      <tr>
+        <th>ITEM_001</th>
+        <td>Rương thần thoại bính ngọ</td>
+        <td>trang bị s-tier</td>
+        <td>0.1%</td>
+        <td rowspand="2">
+          Chứa vũ khí giới hạn mùa giải, chỉ xuất hiện trong sự kiện Tết.
+        </td>
+      </tr>
+      <tfoot>
+        <tr>
+          <th>ITEM_002</th>
+          <td>chìa khóa vạn năng</td>
+          <td>A-tier</td>
+          <td>1.5%</td>
+          <td rowspand="2">dùng để mở các rương sự kiện cấp thấp hơn</td>
+        </tr>
+        <tr>
+          <th>ITEM_003</th>
+          <td>Thẻ nhân đôi EXP 7 ngày</td>
+          <td>A-tier</td>
+          <td>3.4%</td>
+          <td rowspand="2">
+            Tăng gấp đôi điểm kinh nghiệm cho toàn bộ nhân vật trong tài khoản.
+          </td>
+        </tr>
+        <tr>
+          <th>ITEM_004</th>
+          <td>bánh chưng may mắn</td>
+          <td>common</td>
+          <td>25.0%</td>
+          <td rowspand="2">Hồi phục ngay lập tức 50% HP và MP cho nhân vật.</td>
+        </tr>
+        <tr>
+          <th>ITEM_005</th>
+          <td>bao lì xì đồng</td>
+          <td>common</td>
+          <td>70.0%</td>
+          <td rowspand="2">
+            Mở ra nhận ngẫu nhiên từ 1.000 đến 10.000 vàng trong game.
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+    <!-- backend -->
+    <section>
+      <h2>2. Cấu Hình JSON Máy Chủ Game</h2>
+      <p>Đoạn mã cấu hình được đọc bởi Backend dịch vụ game:</p>
+      <pre><code class="language-json">{
+  "event_id": "vng_tet_2026",
+  "event_name": "Sự Kiện Bính Ngọ 2026",
+  "status": "active",
+  "items_config": [
+    {
+      "item_id": "ITEM_001",
+      "drop_rate": 0.001
+    },
+    {
+      "item_id": "ITEM_002",
+      "drop_rate": 0.015
+    },
+    {
+      "item_id": "ITEM_003",
+      "drop_rate": 0.034
+    },
+    {
+      "item_id": "ITEM_004",
+      "drop_rate": 0.250
+    },
+    {
+      "item_id": "ITEM_005",
+      "drop_rate": 0.700
+    }
+  ]
+}</code></pre>
+    </section>
+
+    <!-- Nhúng JS của Prism.js để xử lý tô màu cú pháp -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  </body>
+</html>
