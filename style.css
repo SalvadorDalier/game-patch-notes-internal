@@ -20,8 +20,8 @@ header {
 
 header h1 {
   color: crimson;
-  font-size: 12px;
-  margin-bottom: 8px;
+  font-size: 50px;
+  margin-bottom: 24px;
 }
 
 header p {
@@ -31,7 +31,7 @@ header p {
 
 section {
   background-color: #1e293b;
-  border: 12px double #2f2020;
+  border: 1px solid #2f2020;
   border-radius: 8px;
   padding: 20px;
   margin-bottom: 25px;
@@ -52,7 +52,6 @@ ul li {
   margin-bottom: 8px;
 }
 table {
-  padding-left: 12px;
   border-collapse: collapse;
   margin-top: 10px;
 }
@@ -69,9 +68,7 @@ table th {
   color: rgb(250, 251, 251);
   font-weight: lighter;
 }
-table tr:hover {
-  background-color: #8da3b9;
-}
+
 pre {
   background-color: #020617;
   border: 1px solid #334155;
@@ -81,6 +78,58 @@ pre {
   margin-top: 10px;
 }
 code {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Courier New", Courier, monospace;
   color: #f43f5e;
+}
+tbody tr:nth-child(odd) {
+  background-color: #0f172a;
+}
+tbody tr:nth-child(even) {
+  background-color: #1e293b;
+}
+/* các attribute selector này được đặt ở dưới để đè lên color default */
+/* 1. chỉ tác động lên thẻ tr có thuộc tính là data-rank="S-tier" */
+tr[data-rank="S-tier"] {
+  background-color: rgba(233, 187, 21, 0.963);
+}
+/* 1.1 child combinator(>): chr tác động tới thẻ td là con trực tiếp của tr */
+tr[data-rank="S-tier"] > td {
+  color: #ffffff;
+}
+/* 2. chỉ tác động lên thẻ tr có thuộc tính là data-rank="A-tier" */
+tr[data-rank="A-tier"] {
+  background-color: rgba(78, 11, 114, 0.963);
+}
+
+tr[data-rank="Common"] {
+  background-color: rgba(55, 129, 24, 0.963);
+}
+table td,
+table th {
+  font-weight: bolder;
+  font-size: larger;
+}
+h2 + p {
+  margin-bottom: 30px;
+  color: #94a3b8;
+}
+
+tbody tr:hover {
+  background-color: #6e99d4;
+}
+
+tr td:first-of-type {
+  font-weight: 600;
+}
+
+tr[data-status="locked"] {
+  opacity: 0.35;
+}
+
+tr[data-status="draft"] {
+  display: none;
+}
+
+.placeholder-loading {
+  visibility: hidden;
 }
